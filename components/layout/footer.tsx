@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { Mail, Phone, Instagram, Linkedin } from "lucide-react"
-import Image from "next/image"
-import logotipo from "@/public/logotipo.png"
+import Link from "next/link";
+import { Mail, Phone, Instagram, Linkedin } from "lucide-react";
+import Image from "next/image";
+import logotipo from "@/public/logotipo.png";
 
 export function Footer() {
   return (
@@ -28,8 +28,9 @@ export function Footer() {
                 </span>
               </Link>
               <p className="text-sm text-zinc-400 mb-6 max-w-md">
-                Convertendo visitantes em clientes por meio de landing pages estratégicas e de alta conversão. Soluções
-                digitais que realmente funcionam.
+                Convertendo visitantes em clientes por meio de landing pages
+                estratégicas e de alta conversão. Soluções digitais que
+                realmente funcionam.
               </p>
 
               {/* Contact Info */}
@@ -45,20 +46,13 @@ export function Footer() {
                 </div>
                 <div className="flex items-center gap-2 text-zinc-400">
                   <Phone className="h-4 w-4 text-[#c1ff00]" />
-                  <a href="tel:+5511999999999" className="text-sm hover:text-[#c1ff00] transition-colors">
-                    (11) 99999-9999
+                  <a
+                    href="tel:+5511999999999"
+                    className="text-sm hover:text-[#c1ff00] transition-colors"
+                  >
+                    (99) 98520-1824
                   </a>
                 </div>
-              </div>
-
-              {/* Social Media */}
-              <div className="flex gap-4">
-                <Link href="#" className="text-zinc-400 hover:text-[#c1ff00] transition-colors" aria-label="Instagram">
-                  <Instagram className="h-5 w-5" />
-                </Link>
-                <Link href="#" className="text-zinc-400 hover:text-[#c1ff00] transition-colors" aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" />
-                </Link>
               </div>
             </div>
 
@@ -72,17 +66,26 @@ export function Footer() {
                 </h4>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="#servicos" className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm">
+                    <Link
+                      href="#servicos"
+                      className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm"
+                    >
                       Serviços
                     </Link>
                   </li>
                   <li>
-                    <Link href="#sobre" className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm">
+                    <Link
+                      href="#sobre"
+                      className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm"
+                    >
                       Sobre Nós
                     </Link>
                   </li>
                   <li>
-                    <Link href="#contato" className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm">
+                    <Link
+                      href="#contato"
+                      className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm"
+                    >
                       Contato
                     </Link>
                   </li>
@@ -120,12 +123,12 @@ export function Footer() {
           {/* Bottom Section */}
           <div className="pt-6 border-t border-zinc-800 text-center">
             <p className="text-sm text-zinc-500">
-              © {new Date().getFullYear()} Facter Sites. Todos os direitos reservados.
+              © {new Date().getFullYear()} Facter Sites. Todos os direitos
+              reservados.
             </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
