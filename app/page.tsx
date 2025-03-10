@@ -6,7 +6,6 @@ import { Cases } from "@/components/sections/cases";
 import { Services } from "@/components/sections/services";
 import { Process } from "@/components/sections/process";
 import { Metrics } from "@/components/sections/metrics";
-import { Guarantee } from "@/components/sections/guarantee";
 import { Testimonials } from "@/components/sections/testimonials";
 import { FAQ } from "@/components/sections/faq";
 import { CTA } from "@/components/sections/cta";
@@ -22,7 +21,6 @@ export default function Home() {
         <Services />
         <Process />
         <Metrics />
-        <Guarantee />
         <Testimonials />
         <FAQ />
         <CTA />

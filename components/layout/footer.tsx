@@ -1,159 +1,131 @@
-import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-} from "lucide-react";
-import Image from "next/image";
-import logotipo from "@/public/logotipo.png";
+import Link from "next/link"
+import { Mail, Phone, Instagram, Linkedin } from "lucide-react"
+import Image from "next/image"
+import logotipo from "@/public/logotipo.png"
 
 export function Footer() {
   return (
     <footer className="bg-black border-t border-zinc-800">
-      <div className="container px-4 md:px-6">
-        {/* Main Footer */}
-        <div className="py-12 grid md:grid-cols-4 gap-8">
-          <div>
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8">
-                <div className=" flex items-center justify-center w-full h-full">
-                  <Image
-                    src={logotipo}
-                    alt="Facter Sites Logotipo"
-                    height={20}
-                  />
+      <div className="container px-4 md:px-6 py-12">
+        <div className="max-w-5xl mx-auto">
+          {/* Main Footer Content */}
+          <div className="grid md:grid-cols-2 gap-10 mb-10">
+            {/* Logo and Description */}
+            <div>
+              <Link href="/" className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8">
+                  <div className="flex items-center justify-center w-full h-full">
+                    <Image
+                      src={logotipo || "/placeholder.svg?height=20&width=20"}
+                      alt="Facter Sites Logotipo"
+                      height={20}
+                      width={80}
+                    />
+                  </div>
+                </div>
+                <span className="text-lg">
+                  <strong>Facter</strong> Sites
+                </span>
+              </Link>
+              <p className="text-sm text-zinc-400 mb-6 max-w-md">
+                Convertendo visitantes em clientes por meio de landing pages estratégicas e de alta conversão. Soluções
+                digitais que realmente funcionam.
+              </p>
+
+              {/* Contact Info */}
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center gap-2 text-zinc-400">
+                  <Mail className="h-4 w-4 text-[#c1ff00]" />
+                  <a
+                    href="mailto:contato@factersites.com.br"
+                    className="text-sm hover:text-[#c1ff00] transition-colors"
+                  >
+                    contato@factersites.com.br
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-zinc-400">
+                  <Phone className="h-4 w-4 text-[#c1ff00]" />
+                  <a href="tel:+5511999999999" className="text-sm hover:text-[#c1ff00] transition-colors">
+                    (11) 99999-9999
+                  </a>
                 </div>
               </div>
-              <span className="text-lg">
-                <strong>Facter</strong> Sites
-              </span>
-            </Link>
-            <p className="text-sm text-zinc-400 mb-6">
-              Convertendo visitantes em clientes por meio de landing pages
-              estratégicas e de alta conversão.
+
+              {/* Social Media */}
+              <div className="flex gap-4">
+                <Link href="#" className="text-zinc-400 hover:text-[#c1ff00] transition-colors" aria-label="Instagram">
+                  <Instagram className="h-5 w-5" />
+                </Link>
+                <Link href="#" className="text-zinc-400 hover:text-[#c1ff00] transition-colors" aria-label="LinkedIn">
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Links Section */}
+            <div className="grid grid-cols-2 gap-8">
+              {/* Quick Links */}
+              <div>
+                <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                  <div className="h-1 w-4 bg-[#c1ff00]" />
+                  Links Rápidos
+                </h4>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="#servicos" className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm">
+                      Serviços
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#sobre" className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm">
+                      Sobre Nós
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#contato" className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm">
+                      Contato
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Legal */}
+              <div>
+                <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                  <div className="h-1 w-4 bg-[#c1ff00]" />
+                  Legal
+                </h4>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      href="/termos-de-uso"
+                      className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm"
+                    >
+                      Termos de Uso
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/politica-de-privacidade"
+                      className="text-zinc-400 hover:text-[#c1ff00] transition-colors text-sm"
+                    >
+                      Política de Privacidade
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="pt-6 border-t border-zinc-800 text-center">
+            <p className="text-sm text-zinc-500">
+              © {new Date().getFullYear()} Facter Sites. Todos os direitos reservados.
             </p>
-            <div className="flex gap-4">
-              <Link
-                href="#"
-                className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-              >
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
-                className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
-                className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-white font-semibold mb-4">Serviços</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-                >
-                  Landing Pages
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-                >
-                  Páginas de Vendas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-                >
-                  Páginas de Captura
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-                >
-                  Consultoria
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-semibold mb-4">Empresa</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-                >
-                  Sobre Nós
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-                >
-                  Cases
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-zinc-400 hover:text-[#c1ff00] transition-colors"
-                >
-                  Carreiras
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="py-6 border-t border-zinc-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-zinc-400">
-              © 2025 Facter Sites. Todos os direitos reservados.
-            </div>
-            <div className="flex gap-6">
-              <Link
-                href="#"
-                className="text-sm text-zinc-400 hover:text-[#c1ff00] transition-colors"
-              >
-                Termos de Uso
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-zinc-400 hover:text-[#c1ff00] transition-colors"
-              >
-                Política de Privacidade
-              </Link>
-            </div>
           </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }
+

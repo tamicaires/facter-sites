@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Card } from "@/components/ui/card"
-import { ChevronDown, MessageCircle, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { ChevronDown, MessageCircle, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { getWhatsappUrl } from "@/urls";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -37,11 +39,14 @@ const faqs = [
     answer:
       "Oferecemos garantia incondicional de satisfação. Se você não ficar 100% satisfeito com sua landing page, devolvemos seu investimento integralmente em até 7 dias após a entrega.",
   },
-]
+];
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const url = getWhatsappUrl(
+    "Olá, gostaria de falar com um especialista sobre as soluções digitais da Facter Sites."
+  );
   return (
     <section className="py-20 bg-black">
       <div className="container px-4 md:px-6">
@@ -57,11 +62,15 @@ export function FAQ() {
                 <Card
                   key={index}
                   className="overflow-hidden cursor-pointer bg-zinc-900/50 border-zinc-800"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
                 >
                   <div className="p-6">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        {faq.question}
+                      </h3>
                       <ChevronDown
                         className={`h-5 w-5 text-[#c1ff00] transition-transform ${
                           openIndex === index ? "rotate-180" : ""
@@ -90,20 +99,24 @@ export function FAQ() {
                 <div className="w-12 h-12 rounded-full bg-[#c1ff00]/10 flex items-center justify-center mx-auto">
                   <MessageCircle className="h-6 w-6 text-[#c1ff00]" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Ainda tem dúvidas?</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Ainda tem dúvidas?
+                </h3>
                 <p className="text-zinc-400">
-                  Fale com um especialista agora mesmo e descubra como podemos ajudar seu negócio a vender mais.
+                  Fale com um especialista agora mesmo e descubra como podemos
+                  ajudar seu negócio a vender mais.
                 </p>
-                <Button className="w-full bg-[#c1ff00] text-black hover:bg-[#c1ff00]/90 group">
-                  Falar com Especialista
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link href={url} target="_blank">
+                  <Button className="w-full bg-[#c1ff00] text-black hover:bg-[#c1ff00]/90 group my-3">
+                    Falar com Especialista
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
             </Card>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-

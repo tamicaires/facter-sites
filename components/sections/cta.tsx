@@ -3,8 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, CheckCircle, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { getWhatsappUrl } from "@/urls";
 
 export function CTA() {
+  const url = getWhatsappUrl(
+    "Olá, gostaria de falar com um especialista sobre as soluções digitais da Facter Sites."
+  );
   return (
     <section className="py-20 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-[#c1ff00]/5" />
@@ -28,7 +33,7 @@ export function CTA() {
           </h2>
 
           <p className="text-xl text-zinc-400 mb-8">
-            Junte-se a mais de 200 empresas que já aumentaram suas vendas em até
+            Junte-se a mais de 100 empresas que já aumentaram suas vendas em até
             300% com nossas landing pages. Últimas 3 vagas com condições
             especiais para Junho!
           </p>
@@ -52,13 +57,15 @@ export function CTA() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto bg-[#c1ff00] text-black hover:bg-[#c1ff00]/90 px-8 h-14 text-lg group"
-            >
-              Quero Vender Mais
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link href={url} target="_blank">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-[#c1ff00] text-black hover:bg-[#c1ff00]/90 px-8 h-14 text-lg group"
+              >
+                Quero Vender Mais
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

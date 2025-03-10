@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const cases = [
   {
@@ -14,32 +16,7 @@ const cases = [
     description:
       "Landing page para SaaS de gestão de manutenção de frotas, desenvolvida com foco em conversão e performance.",
     image: "https://i.ibb.co/rG21dBmL/image.png",
-    stats: {
-      conversion: "N/A",
-      leads: "N/A",
-      time: "N/A",
-    },
-  },
-  {
-    id: "bora-trip-milhas",
-    title: "Bora Trip Milhas",
-    type: "Site Institucional",
-    description:
-      "Site institucional para empresa de milhas aéreas, focado em gerar interesse e captação de leads.",
-    image: "https://i.ibb.co/MysXTkV8/image.png",
-    stats: {
-      conversion: "N/A",
-      leads: "N/A",
-      time: "N/A",
-    },
-  },
-  {
-    id: "englobal-consorcios",
-    title: "Englobal Consórcios",
-    type: "Site Profissional",
-    description:
-      "Site profissional para empresa de consórcios, desenvolvido com foco em usabilidade e experiência do usuário.",
-    image: "https://i.ibb.co/k2TPsbq3/image.png",
+    url: "https://www.facter.com.br/",
     stats: {
       conversion: "N/A",
       leads: "N/A",
@@ -53,6 +30,7 @@ const cases = [
     description:
       "Site para centro de treinamento de artes marciais, com design moderno e foco na captação de novos alunos.",
     image: "https://i.ibb.co/RkGbdDqx/image.png",
+    url: "https://www.ctrodrigoargentino.com.br/",
     stats: {
       conversion: "N/A",
       leads: "N/A",
@@ -66,6 +44,35 @@ const cases = [
     description:
       "Site para empresa de acabamentos e telhas, desenvolvido com foco em destacar produtos e serviços.",
     image: "https://i.ibb.co/JjX6G97x/image.png",
+    url: "https://www.uniaosiqueira.com.br/",
+    stats: {
+      conversion: "N/A",
+      leads: "N/A",
+      time: "N/A",
+    },
+  },
+  {
+    id: "bora-trip-milhas",
+    title: "Bora Trip Milhas",
+    type: "Site Institucional",
+    description:
+      "Site institucional para empresa de milhas aéreas, focado em gerar interesse e captação de leads.",
+    image: "https://i.ibb.co/MysXTkV8/image.png",
+    url: "https://boratripmilhas.vercel.app/",
+    stats: {
+      conversion: "N/A",
+      leads: "N/A",
+      time: "N/A",
+    },
+  },
+  {
+    id: "englobal-consorcios",
+    title: "Englobal Consórcios",
+    type: "Site Profissional",
+    description:
+      "Site profissional para empresa de consórcios, desenvolvido com foco em usabilidade e experiência do usuário.",
+    image: "https://i.ibb.co/k2TPsbq3/image.png",
+    url: "https://englobal.vercel.app/",
     stats: {
       conversion: "N/A",
       leads: "N/A",
@@ -78,7 +85,7 @@ export function Cases() {
   const [activeCase, setActiveCase] = useState(cases[0]);
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black" id="cases">
       <div className="container px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 mb-8">
@@ -133,10 +140,12 @@ export function Cases() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <button className="px-4 py-2 bg-[#c1ff00] text-black rounded-lg flex items-center gap-2 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        Ver Projeto Completo
-                        <ExternalLink className="h-4 w-4" />
-                      </button>
+                      <Link href={activeCase.url} target="_blank">
+                        <Button className="px-4 py-2 bg-[#c1ff00] text-black rounded-lg flex items-center gap-2 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                          Ver Projeto Completo
+                          <ExternalLink className="h-4 w-4" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
 
@@ -151,8 +160,8 @@ export function Cases() {
                     </h3>
 
                     <p className="text-zinc-400">{activeCase.description}</p>
-
-                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-zinc-800">
+                    {/* stats removed temporally  */}
+                    {/* <div className="grid grid-cols-3 gap-4 pt-4 border-t border-zinc-800">
                       {"conversion" in activeCase.stats && (
                         <div className="text-center p-3 rounded-lg bg-zinc-900">
                           <div className="text-2xl font-bold text-[#c1ff00]">
@@ -173,16 +182,7 @@ export function Cases() {
                           </div>
                         </div>
                       )}
-                      {/* {"sales" in activeCase.stats && (
-                        <div className="text-center p-3 rounded-lg bg-zinc-900">
-                          <div className="text-2xl font-bold text-[#c1ff00]">
-                            {activeCase.stats.sales}
-                          </div>
-                          <div className="text-sm text-zinc-400">
-                            Vendas Geradas
-                          </div>
-                        </div>
-                      )} */}
+
                       <div className="text-center p-3 rounded-lg bg-zinc-900">
                         <div className="text-2xl font-bold text-[#c1ff00]">
                           {activeCase.stats.time}
@@ -191,7 +191,7 @@ export function Cases() {
                           Tempo de Carregamento
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </Card>
               </motion.div>

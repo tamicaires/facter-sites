@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card } from "@/components/ui/card"
-import { Zap, Target, Clock, Trophy } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { Zap, Target, Clock } from "lucide-react";
 
 export function WhyChoose() {
   const differentials = [
@@ -17,28 +17,23 @@ export function WhyChoose() {
     {
       icon: Zap,
       title: "Alta Performance",
-      description: "Carregamento ultra-rápido e otimizado, garantindo que você não perca vendas por lentidão.",
+      description:
+        "Carregamento ultra-rápido e otimizado, garantindo que você não perca vendas por lentidão.",
       stat: "<2s",
       label: "Tempo de carregamento",
     },
     {
       icon: Clock,
       title: "Entrega Rápida",
-      description: "Processo otimizado para entregar sua página funcionando em tempo recorde.",
+      description:
+        "Processo otimizado para entregar sua página ou site funcionando em tempo recorde.",
       stat: "5-7",
       label: "Dias para entrega",
     },
-    {
-      icon: Trophy,
-      title: "Resultados Garantidos",
-      description: "Satisfação garantida ou seu dinheiro de volta. Zero riscos para você.",
-      stat: "100%",
-      label: "Garantia de satisfação",
-    },
-  ]
+  ];
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black" id="diferenciais">
       <div className="container px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 mb-8">
@@ -47,10 +42,11 @@ export function WhyChoose() {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-16">
-            O que diferencia uma página que <span className="text-[#c1ff00]">converte das demais?</span>
+            O que diferencia uma página que{" "}
+            <span className="text-[#c1ff00]">converte das demais?</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {differentials.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -60,16 +56,22 @@ export function WhyChoose() {
                 viewport={{ once: true }}
               >
                 <Card className="bg-zinc-900/50 border-zinc-800 p-6 h-full">
-                  <div className="flex items-start gap-4">
+                  <div className="flex flex-col justify-center items-start gap-4">
                     <div className="p-3 rounded-lg bg-[#c1ff00]/10">
                       <item.icon className="h-6 w-6 text-[#c1ff00]" />
                     </div>
                     <div className="space-y-4 flex-1">
-                      <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                      <h3 className="text-xl font-bold text-white">
+                        {item.title}
+                      </h3>
                       <p className="text-zinc-400">{item.description}</p>
                       <div className="pt-4 border-t border-zinc-800">
-                        <div className="text-2xl font-bold text-[#c1ff00]">{item.stat}</div>
-                        <div className="text-sm text-zinc-400">{item.label}</div>
+                        <div className="text-2xl font-bold text-[#c1ff00]">
+                          {item.stat}
+                        </div>
+                        <div className="text-sm text-zinc-400">
+                          {item.label}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -80,6 +82,5 @@ export function WhyChoose() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

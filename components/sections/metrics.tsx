@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
-import { TrendingUp, Users, Clock, DollarSign } from "lucide-react";
+import { TrendingUp, Users, Clock } from "lucide-react";
+import analytics from "@/public/analytics.png";
 
 export function Metrics() {
   const metrics = [
@@ -54,7 +55,7 @@ export function Metrics() {
             <div className="relative">
               <div className="absolute inset-0 bg-[#c1ff00]/20 rounded-2xl blur-3xl" />
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src={analytics}
                 alt="Dashboard de Métricas"
                 width={600}
                 height={400}
