@@ -30,9 +30,9 @@ export function Hero() {
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <div className="inline-flex items-center px-4 py-2 mb-8 rounded-full bg-zinc-900/50 border border-zinc-800">
-            <span className="flex h-2 w-2 rounded-full bg-[#c1ff00] animate-pulse-glow mr-2" />
+            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse-glow mr-2" />
             <span className="text-sm text-zinc-400">
-              Seu negócio na frente das pessoas certas, na hora certa.
+              Seu negócio no digital.
             </span>
           </div>
 
@@ -52,7 +52,7 @@ export function Hero() {
             <Link href={url} target="_blank">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-[#c1ff00] text-black hover:bg-[#c1ff00]/90 px-8 h-14 text-lg group"
+                className="w-full sm:w-auto bg-primary text-black px-8 h-14 text-lg group"
               >
                 Quero Vender Mais
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -69,16 +69,16 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 text-sm">
+          {/* <div className="flex flex-wrap justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-[#c1ff00]" />
+              <Users className="h-5 w-5 text-primary" />
               <span className="text-zinc-400">+100 Clientes Satisfeitos</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-[#c1ff00]" />
+              <Clock className="h-5 w-5 text-primary" />
               <span className="text-zinc-400">Entrega em 5-7 dias</span>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

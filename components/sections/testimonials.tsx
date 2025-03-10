@@ -109,10 +109,6 @@ export function Testimonials() {
           <div className="mt-12 flex flex-wrap justify-center gap-8">
             <div className="flex items-center gap-2">
               <div className="h-1 w-1 rounded-full bg-[#c1ff00]" />
-              <span className="text-zinc-400">100+ Projetos Entregues</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="h-1 w-1 rounded-full bg-[#c1ff00]" />
               <span className="text-zinc-400">4.7/5 Avaliação Média</span>
             </div>
             <div className="flex items-center gap-2">

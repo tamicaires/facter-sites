@@ -34,11 +34,6 @@ const faqs = [
     answer:
       "Absolutamente! Você recebe 30 dias de suporte gratuito após a entrega. Neste período, fazemos ajustes, otimizações e fornecemos orientações para maximizar seus resultados.",
   },
-  {
-    question: "E se eu não gostar do resultado?",
-    answer:
-      "Oferecemos garantia incondicional de satisfação. Se você não ficar 100% satisfeito com sua landing page, devolvemos seu investimento integralmente em até 7 dias após a entrega.",
-  },
 ];
 
 export function FAQ() {
@@ -52,8 +47,8 @@ export function FAQ() {
       <div className="container px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 mb-8">
-            <div className="h-1 w-12 bg-[#c1ff00]" />
-            <p className="text-[#c1ff00] text-sm">DÚVIDAS FREQUENTES</p>
+            <div className="h-1 w-12 bg-primary" />
+            <p className="text-primary text-sm">DÚVIDAS FREQUENTES</p>
           </div>
 
           <div className="grid lg:grid-cols-[1fr,400px] gap-12 items-start">
@@ -72,7 +67,7 @@ export function FAQ() {
                         {faq.question}
                       </h3>
                       <ChevronDown
-                        className={`h-5 w-5 text-[#c1ff00] transition-transform ${
+                        className={`h-5 w-5 text-primary transition-transform ${
                           openIndex === index ? "rotate-180" : ""
                         }`}
                       />
@@ -96,8 +91,8 @@ export function FAQ() {
 
             <Card className="bg-zinc-900/50 border-zinc-800 p-6">
               <div className="text-center space-y-4">
-                <div className="w-12 h-12 rounded-full bg-[#c1ff00]/10 flex items-center justify-center mx-auto">
-                  <MessageCircle className="h-6 w-6 text-[#c1ff00]" />
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                  <MessageCircle className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-white">
                   Ainda tem dúvidas?
@@ -107,7 +102,7 @@ export function FAQ() {
                   ajudar seu negócio a vender mais.
                 </p>
                 <Link href={url} target="_blank">
-                  <Button className="w-full bg-[#c1ff00] text-black hover:bg-[#c1ff00]/90 group my-3">
+                  <Button className="w-full bg-primary text-black group my-3">
                     Falar com Especialista
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
