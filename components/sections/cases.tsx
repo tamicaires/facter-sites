@@ -24,6 +24,20 @@ const cases = [
     },
   },
   {
+    id: "vendas-pra-valer",
+    title: "Vendas Pra Valer",
+    type: "Landing Page",
+    description:
+      "Landing page desenvolvida para um mentor de vendas, com foco em atrair empresas e profissionais renomados, destacando a expertise e os resultados comprovados do mentor.",
+    image: "https://i.ibb.co/tTGgdLTH/Captura-de-tela-2025-06-08-165217.png",
+    url: "https://www.vendaspravaler.com.br/",
+    stats: {
+      conversion: "N/A",
+      leads: "N/A",
+      time: "N/A",
+    },
+  },
+  {
     id: "ct-rodrigo-argentino",
     title: "CT Rodrigo Argentino",
     type: "Site para Centro de Treinamento",
